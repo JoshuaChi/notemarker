@@ -1,0 +1,194 @@
+._hlm_ {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: none 0s ease 0s ;
+  visibility: hidden;
+  z-index: 500;
+}
+._hlm_:after {
+    background: none repeat scroll 0 0 #262625;
+    bottom: -3px;
+    box-shadow: 0 0 2px #262625;
+    content: "";
+    display: block;
+    height: 8px;
+    left: 50%;
+    margin-left: -4px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 8px;
+}
+
+._hlmi_ {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: linear-gradient(to bottom, rgba(49, 49, 47, 0.97), #262625);
+    background-repeat: repeat-x;
+    border-color: #262625 #1c1c1b #121211;
+    border-image: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.07) inset, 0 0 2px rgba(255, 255, 255, 0.15) inset;
+    height: 43px;
+    position: relative;
+}
+._hlm_ ul {
+    font-size: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+._hlm_ button  {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.button-highlightMenu {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    box-sizing: content-box;
+    color: white;
+    display: block;
+    padding: 0 10px;
+}
+.highlightMenu-button:first-child .button-highlightMenu {
+    padding-left: 18px;
+}
+.highlightMenu-button:last-child .button-highlightMenu {
+    padding-right: 18px;
+}
+.highlightMenu-button .icon:before {
+    color: #fff;
+    font-size: 22px;
+    line-height: 42px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+.highlightMenu-button.is-active .icon:before {
+    color: #60d778;
+}
+.highlightMenu-buttons .icon--link:before {
+    position: relative;
+    top: 1px;
+}
+.highlightMenu-notes .icon--notes {
+    position: relative;
+}
+.highlightMenu-notes .icon--notes:before {
+    font-size: 20px;
+    line-height: 42px;
+}
+.highlightMenu-notes .icon--notes:after {
+    color: #262625;
+    font-size: 14px;
+    left: 0;
+    line-height: 37px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+.browser-firefox .highlightMenu-notes .icon--notes:after {
+    top: -29px;
+}
+.highlightMenu .highlightMenu-arrowClip {
+    bottom: -11px;
+    clip: rect(12px, 24px, 24px, 0px);
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
+}
+.highlightMenu .highlightMenu-arrowClip .highlightMenu-arrow {
+    background-color: #454543;
+    border: 2px solid #121211;
+    display: block;
+    height: 20px;
+    transform: rotate(45deg) scale(0.5);
+    width: 20px;
+}
+.highlightMenu.is-flushTop .highlightMenu-arrowClip {
+    display: none;
+}
+.highlightMenu-blockquote {
+    position: relative;
+}
+.highlightMenu-blockquote .icon--blockquote:before {
+    display: block;
+    margin-right: 8px;
+    overflow: hidden;
+    width: 7px;
+}
+.highlightMenu-blockquote .icon--blockquote:after {
+    font-size: 22px;
+    left: 19px;
+    overflow: hidden;
+    position: absolute;
+    top: 6px;
+    width: 7px;
+}
+.browser-firefox .icon--blockquote:before, .browser-firefox .icon--blockquote:after {
+    text-indent: 1px;
+}
+.highlightMenu-blockquote.is-blockquoteMode .icon--blockquote:before {
+    color: #60d778;
+}
+.highlightMenu-blockquote.is-pullquoteMode .icon--blockquote:before, .highlightMenu-blockquote.is-pullquoteMode .icon--blockquote:after {
+    color: #60d778;
+}
+.highlightMenu-linkinput {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.highlightMenu-linkinputField {
+    -moz-appearance: none;
+    -moz-osx-font-smoothing: grayscale;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    left: 10px;
+    letter-spacing: 0.01rem;
+    outline: medium none;
+    padding: 11px 0;
+    position: absolute;
+    right: 40px;
+    text-rendering: optimizelegibility;
+    top: 0;
+}
+.highlightMenu-linkinput .button-highlightMenu {
+    bottom: 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.highlightMenu-linkmode .highlightMenu-buttons {
+    visibility: hidden;
+}
+.highlightMenu-linkmode .highlightMenu-linkinput {
+    animation: 180ms linear 0s normal forwards 1 pop-upwards;
+    display: block;
+}
+.highlightMenu-measure {
+    display: inline-block;
+    visibility: hidden;
+}
+.highlightMenu-active {
+    animation: 180ms linear 0s normal forwards 1 pop-upwards;
+    display: inline-block;
+    transition: top 0.075s ease-out 0s, left 0.075s ease-out 0s;
+    visibility: visible;
+}
+.highlightMenu-media .highlightMenu-button .icon:before {
+    font-size: 28px;
+    line-height: 38px;
+}
