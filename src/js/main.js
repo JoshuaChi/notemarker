@@ -2,6 +2,7 @@ var notemarker = (
   function(){
     var text = "";
     var pos = {};
+    var selected = false;
     return {
       stopEvent: function(e) {
         if(!e) var e = window.event;
@@ -31,17 +32,31 @@ var notemarker = (
           }
           this.pos = {"x":posX, "y":posY};
       },
+      clearSelection: function(){
+        if (window.getSelection) {
+          if (window.getSelection().empty) {  // Chrome
+            window.getSelection().empty();
+          } else if (window.getSelection().removeAllRanges) {  // Firefox
+            window.getSelection().removeAllRanges();
+          }
+        } else if (document.selection) {  // IE?
+          document.selection.empty();
+        }
+      },
       mouseUpListener: function(e) {
         console.log("mouseUpListener");
         var self = notemarker;
         var range = (document.all) ? document.selection.createRange(): document.getSelection();
-        self.selectionListener(range);
+        // self.selectionListener(range);
         self.text =  (document.all) ? range.text : range.toString();
         self.position(e);
-        if('' != self.text && undefined != self.text) {
+        if(false == self.selected && '' != self.text && undefined != self.text) {
+          self.selected = true;
           self.showLightBox();
         }
         else {
+          self.selected = false;
+          self.clearSelection();
           self.hideLightBox();
         }
         return self.stopEvent(e);
@@ -62,7 +77,7 @@ var notemarker = (
             console.log('_hlmib1_');
             return self.stopEvent(e);
           });
-          document.getElementById("_hlmib2_").addEventListener('mouseup', function() {
+          document.getElementById("_hlmib2_").addEventListener('mouseup', function(e) {
             console.log('_hlmib2_');
             return self.stopEvent(e);
           });
